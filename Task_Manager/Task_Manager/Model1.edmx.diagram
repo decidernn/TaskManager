@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="334e994f19ba46c99052b7b774509fb8" Name="Diagram1">
+        <EntityTypeShape EntityType="TaskManagerModel.Action" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.Members" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.MemberSubtask" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.Roles" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.Status" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.Subtask" Width="1.5" PointX="11.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.Task" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.Teams" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.User" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.UserHistory" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="TaskManagerModel.FK_UserHistory_Action" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.FK_Members_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.FK_Members_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.FK_Members_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.FK_MemberSubtask_Members" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.FK_MemberSubtask_Subtask" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.FK_Subtask_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.FK_Task_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.FK_Subtask_Teams" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.FK_Task_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.FK_UserHistory_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

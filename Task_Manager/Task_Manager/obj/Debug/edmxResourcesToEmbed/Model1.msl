@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TaskManagerModelContainer" CdmEntityContainer="TaskManagerEntities">
+    <EntitySetMapping Name="Action">
+      <EntityTypeMapping TypeName="TaskManagerModel.Action">
+        <MappingFragment StoreEntitySet="Action">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="TaskManagerModel.Members">
+        <MappingFragment StoreEntitySet="Members">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="IdTeam" ColumnName="IdTeam" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberSubtask">
+      <EntityTypeMapping TypeName="TaskManagerModel.MemberSubtask">
+        <MappingFragment StoreEntitySet="MemberSubtask">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdMember" ColumnName="IdMember" />
+          <ScalarProperty Name="IdSubtask" ColumnName="IdSubtask" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="TaskManagerModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="TaskManagerModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subtask">
+      <EntityTypeMapping TypeName="TaskManagerModel.Subtask">
+        <MappingFragment StoreEntitySet="Subtask">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+          <ScalarProperty Name="DateOfStart" ColumnName="DateOfStart" />
+          <ScalarProperty Name="DateOfEnd" ColumnName="DateOfEnd" />
+          <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+          <ScalarProperty Name="IdTask" ColumnName="IdTask" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Task">
+      <EntityTypeMapping TypeName="TaskManagerModel.Task">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+          <ScalarProperty Name="DateOfStart" ColumnName="DateOfStart" />
+          <ScalarProperty Name="DateOfEnd" ColumnName="DateOfEnd" />
+          <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+          <ScalarProperty Name="IdTeam" ColumnName="IdTeam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="TaskManagerModel.Teams">
+        <MappingFragment StoreEntitySet="Teams">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="TaskManagerModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserHistory">
+      <EntityTypeMapping TypeName="TaskManagerModel.UserHistory">
+        <MappingFragment StoreEntitySet="UserHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="IdAction" ColumnName="IdAction" />
+          <ScalarProperty Name="DateAction" ColumnName="DateAction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddUserHistoryRecord" FunctionName="Хранилище TaskManagerModel.AddUserHistoryRecord" />
+    <FunctionImportMapping FunctionImportName="CheckIdInMembers" FunctionName="Хранилище TaskManagerModel.CheckIdInMembers" />
+    <FunctionImportMapping FunctionImportName="CheckIdInMembersForTeam" FunctionName="Хранилище TaskManagerModel.CheckIdInMembersForTeam" />
+    <FunctionImportMapping FunctionImportName="GetAllData" FunctionName="Хранилище TaskManagerModel.GetAllData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TaskManagerModel.GetAllData_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Specification" ColumnName="Specification" />
+          <ScalarProperty Name="Title1" ColumnName="Title1" />
+          <ScalarProperty Name="Specification1" ColumnName="Specification1" />
+          <ScalarProperty Name="DateOfStart" ColumnName="DateOfStart" />
+          <ScalarProperty Name="DateOfEnd" ColumnName="DateOfEnd" />
+          <ScalarProperty Name="Статус" ColumnName="Статус" />
+          <ScalarProperty Name="Команда" ColumnName="Команда" />
+          <ScalarProperty Name="Title2" ColumnName="Title2" />
+          <ScalarProperty Name="Specification2" ColumnName="Specification2" />
+          <ScalarProperty Name="DateOfStart1" ColumnName="DateOfStart1" />
+          <ScalarProperty Name="DateOfEnd1" ColumnName="DateOfEnd1" />
+          <ScalarProperty Name="Статус1" ColumnName="Статус1" />
+          <ScalarProperty Name="Задача" ColumnName="Задача" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserHistory" FunctionName="Хранилище TaskManagerModel.GetUserHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TaskManagerModel.GetUserHistory_Result">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="DateAction" ColumnName="DateAction" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

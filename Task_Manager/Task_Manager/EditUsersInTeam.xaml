@@ -1,0 +1,53 @@
+﻿<Page x:Class="Task_Manager.EditUsersInTeam"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Task_Manager"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="850"
+      Title="EditUsersInTeam">
+
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Width" Value="171"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+    </Page.Resources>
+
+    <Grid>
+        <DataGrid Name="dgAllUsers" Margin="22,24,520,24" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding user_surname}" Width="*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding user_name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="dgAllUsers2" Margin="22,24,520,24" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding user_surname}" Width="*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding user_name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="dgSelectedUsers" Margin="520,24,21,24" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding user_surname}" Width="*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding user_name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="dgSelectedUsers2" Margin="520,24,21,24" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding user_surname}" Width="*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding user_name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Name="txtSeartch" HorizontalAlignment="Center" Margin="0,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtSeartch_TextChanged"/>
+        <Button Name="btnAdd" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0,245,0,0" Click="btnAdd_Click"/>
+        <Button Name="btnDelete" Content="Удалить" HorizontalAlignment="Center" Margin="0,288,0,0" VerticalAlignment="Top" Width="120" Click="btnDelete_Click"/>
+        <Button x:Name="btnBack" Content="Назад" HorizontalAlignment="Center" Margin="0,329,0,0" VerticalAlignment="Top" Width="120" Click="btnBack_Click"/>
+        <Label Content="Поиск по фамилии" HorizontalAlignment="Center" Margin="0,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+
+    </Grid>
+</Page>

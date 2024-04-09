@@ -1,0 +1,29 @@
+﻿<Page x:Class="Task_Manager.AddTeam"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Task_Manager"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="850"
+      Title="AddTeam">
+
+    <Grid>
+        <Button Name="btnSave" Content="Сохранить" HorizontalAlignment="Left" Margin="274,536,0,0" VerticalAlignment="Top" Width="174"/>
+        <DataGrid Name="dgUsers" Margin="466,140,40,250" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding surname}" Width="*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnBack" Content="Назад" HorizontalAlignment="Left" Margin="481,536,0,0" VerticalAlignment="Top" Click="btnBack_Click"  Width="173"/>
+        <StackPanel Margin="31,175,420,251">
+            <Label Margin="0 0 0 0" Content="Название команды" FontSize="18" HorizontalContentAlignment="Center" FontFamily="Segoe UI Semibold"/>
+            <TextBox Name="txtNameTeam" Width="205"/>
+            <Label Margin="0 10 0 0"  Content="Описание команды" FontSize="18" HorizontalContentAlignment="Center" FontFamily="Segoe UI Semibold"/>
+            <TextBox Name="txtSpecification" Width="205" Height="55"/>
+        </StackPanel>
+        <Label Content="Участники" HorizontalAlignment="Left" Margin="466,103,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Semibold"/>
+        <Button x:Name="btnEdit" Content="Редактировать исполнителей" HorizontalAlignment="Left" Margin="505,372,0,0" VerticalAlignment="Top" Width="266" Click="btnEdit_Click"/>
+    </Grid>
+</Page>

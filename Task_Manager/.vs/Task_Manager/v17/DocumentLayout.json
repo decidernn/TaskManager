@@ -1,0 +1,183 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\task_manager\\menu.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|solutionrelative:task_manager\\menu.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|d:\\\u043F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0434\u0438\u043F\u043B\u043E\u043C\\task_manager\\task_manager\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|solutionrelative:task_manager\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|d:\\\u043F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0434\u0438\u043F\u043B\u043E\u043C\\task_manager\\task_manager\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|solutionrelative:task_manager\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|d:\\\u043F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0434\u0438\u043F\u043B\u043E\u043C\\task_manager\\task_manager\\createsubtask.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|solutionrelative:task_manager\\createsubtask.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\task_manager\\createsubtask.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|solutionrelative:task_manager\\createsubtask.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\task_manager\\editusersinteam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|solutionrelative:task_manager\\editusersinteam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\task_manager\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|solutionrelative:task_manager\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\task_manager\\validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|solutionrelative:task_manager\\validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\task_manager\\registration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|solutionrelative:task_manager\\registration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\task_manager\\addteam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D1D2FE59-A6A4-49D1-A480-3671FEC21780}|Task_Manager\\Task_Manager.csproj|solutionrelative:task_manager\\addteam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbconnection.cs",
+              "DocumentMoniker": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\dbconnection.cs",
+              "RelativeDocumentMoniker": "Task_Manager\\dbconnection.cs",
+              "ToolTip": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\dbconnection.cs",
+              "RelativeToolTip": "Task_Manager\\dbconnection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T06:15:45.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Manager.cs",
+              "DocumentMoniker": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\Manager.cs",
+              "RelativeDocumentMoniker": "Task_Manager\\Manager.cs",
+              "ToolTip": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\Manager.cs",
+              "RelativeToolTip": "Task_Manager\\Manager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T06:15:27.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateSubtask.xaml.cs",
+              "DocumentMoniker": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\CreateSubtask.xaml.cs",
+              "RelativeDocumentMoniker": "Task_Manager\\CreateSubtask.xaml.cs",
+              "ToolTip": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\CreateSubtask.xaml.cs",
+              "RelativeToolTip": "Task_Manager\\CreateSubtask.xaml.cs",
+              "ViewState": "AQIAACcBAAAAAAAAAAAYwDEBAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T12:30:30.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateSubtask.xaml",
+              "DocumentMoniker": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\CreateSubtask.xaml",
+              "RelativeDocumentMoniker": "Task_Manager\\CreateSubtask.xaml",
+              "ToolTip": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\CreateSubtask.xaml",
+              "RelativeToolTip": "Task_Manager\\CreateSubtask.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-07T12:30:27.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Validator.cs",
+              "DocumentMoniker": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\Validator.cs",
+              "RelativeDocumentMoniker": "Task_Manager\\Validator.cs",
+              "ToolTip": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\Validator.cs",
+              "RelativeToolTip": "Task_Manager\\Validator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T12:07:04.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Menu.xaml.cs",
+              "DocumentMoniker": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\Menu.xaml.cs",
+              "RelativeDocumentMoniker": "Task_Manager\\Menu.xaml.cs",
+              "ToolTip": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\Menu.xaml.cs",
+              "RelativeToolTip": "Task_Manager\\Menu.xaml.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwCkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T17:30:37.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Registration.xaml",
+              "DocumentMoniker": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\Registration.xaml",
+              "RelativeDocumentMoniker": "Task_Manager\\Registration.xaml",
+              "ToolTip": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\Registration.xaml",
+              "RelativeToolTip": "Task_Manager\\Registration.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-05T17:23:07.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditUsersInTeam.xaml",
+              "DocumentMoniker": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\EditUsersInTeam.xaml",
+              "RelativeDocumentMoniker": "Task_Manager\\EditUsersInTeam.xaml",
+              "ToolTip": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\EditUsersInTeam.xaml",
+              "RelativeToolTip": "Task_Manager\\EditUsersInTeam.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-05T15:37:17.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Menu.xaml",
+              "DocumentMoniker": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\Menu.xaml",
+              "RelativeDocumentMoniker": "Task_Manager\\Menu.xaml",
+              "ToolTip": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\Menu.xaml",
+              "RelativeToolTip": "Task_Manager\\Menu.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-06T13:29:27.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddTeam.xaml",
+              "DocumentMoniker": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\AddTeam.xaml",
+              "RelativeDocumentMoniker": "Task_Manager\\AddTeam.xaml",
+              "ToolTip": "D:\\\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E\\\u0414\u0418\u041F\u041B\u041E\u041C\\Task_Manager\\Task_Manager\\AddTeam.xaml",
+              "RelativeToolTip": "Task_Manager\\AddTeam.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-28T05:41:12.315Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище TaskManagerModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="IdTeam" Type="int" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberSubtask">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdMember" Type="int" Nullable="false" />
+          <Property Name="IdSubtask" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subtask">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Specification" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateOfStart" Type="date" Nullable="false" />
+          <Property Name="DateOfEnd" Type="date" />
+          <Property Name="IdStatus" Type="int" Nullable="false" />
+          <Property Name="IdTask" Type="int" Nullable="false" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Specification" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateOfStart" Type="date" Nullable="false" />
+          <Property Name="DateOfEnd" Type="date" />
+          <Property Name="IdStatus" Type="int" Nullable="false" />
+          <Property Name="IdTeam" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teams">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Specification" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="IdAction" Type="int" Nullable="false" />
+          <Property Name="DateAction" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Members_Role">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Members_Team">
+          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="IdTeam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Members_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberSubtask_Members">
+          <End Role="Members" Type="Self.Members" Multiplicity="1" />
+          <End Role="MemberSubtask" Type="Self.MemberSubtask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MemberSubtask">
+              <PropertyRef Name="IdMember" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberSubtask_Subtask">
+          <End Role="Subtask" Type="Self.Subtask" Multiplicity="1" />
+          <End Role="MemberSubtask" Type="Self.MemberSubtask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subtask">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MemberSubtask">
+              <PropertyRef Name="IdSubtask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subtask_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Subtask" Type="Self.Subtask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Subtask">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subtask_Teams">
+          <End Role="Task" Type="Self.Task" Multiplicity="1" />
+          <End Role="Subtask" Type="Self.Subtask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Subtask">
+              <PropertyRef Name="IdTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Team">
+          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="IdTeam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserHistory_Action">
+          <End Role="Action" Type="Self.Action" Multiplicity="1" />
+          <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserHistory">
+              <PropertyRef Name="IdAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserHistory_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserHistory">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="AddUserHistoryRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="IdAction" Type="int" Mode="In" />
+          <Parameter Name="DateAction" Type="date" Mode="In" />
+        </Function>
+        <Function Name="CheckIdInMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="TeamTitle" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="CheckIdInMembersForTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="TaskId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetAllData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetUserHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdUser" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="Хранилище TaskManagerModelContainer">
+          <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MemberSubtask" EntityType="Self.MemberSubtask" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subtask" EntityType="Self.Subtask" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teams" EntityType="Self.Teams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserHistory" EntityType="Self.UserHistory" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Members_Role" Association="Self.FK_Members_Role">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Members_Team" Association="Self.FK_Members_Team">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Members_User" Association="Self.FK_Members_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberSubtask_Members" Association="Self.FK_MemberSubtask_Members">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="MemberSubtask" EntitySet="MemberSubtask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberSubtask_Subtask" Association="Self.FK_MemberSubtask_Subtask">
+            <End Role="Subtask" EntitySet="Subtask" />
+            <End Role="MemberSubtask" EntitySet="MemberSubtask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subtask_Status" Association="Self.FK_Subtask_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Subtask" EntitySet="Subtask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subtask_Teams" Association="Self.FK_Subtask_Teams">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="Subtask" EntitySet="Subtask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Status" Association="Self.FK_Task_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Team" Association="Self.FK_Task_Team">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserHistory_Action" Association="Self.FK_UserHistory_Action">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="UserHistory" EntitySet="UserHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserHistory_User" Association="Self.FK_UserHistory_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserHistory" EntitySet="UserHistory" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TaskManagerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="UserHistory" Relationship="Self.FK_UserHistory_Action" FromRole="Action" ToRole="UserHistory" />
+        </EntityType>
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="IdTeam" Type="Int32" Nullable="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK_Members_Role" FromRole="Members" ToRole="Roles" />
+          <NavigationProperty Name="Teams" Relationship="Self.FK_Members_Team" FromRole="Members" ToRole="Teams" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Members_User" FromRole="Members" ToRole="User" />
+          <NavigationProperty Name="MemberSubtask" Relationship="Self.FK_MemberSubtask_Members" FromRole="Members" ToRole="MemberSubtask" />
+        </EntityType>
+        <EntityType Name="MemberSubtask">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMember" Type="Int32" Nullable="false" />
+          <Property Name="IdSubtask" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Members" Relationship="Self.FK_MemberSubtask_Members" FromRole="MemberSubtask" ToRole="Members" />
+          <NavigationProperty Name="Subtask" Relationship="Self.FK_MemberSubtask_Subtask" FromRole="MemberSubtask" ToRole="Subtask" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Members" Relationship="Self.FK_Members_Role" FromRole="Roles" ToRole="Members" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Subtask" Relationship="Self.FK_Subtask_Status" FromRole="Status" ToRole="Subtask" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Task_Status" FromRole="Status" ToRole="Task" />
+        </EntityType>
+        <EntityType Name="Subtask">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Specification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfStart" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOfEnd" Type="DateTime" Precision="0" />
+          <Property Name="IdStatus" Type="Int32" Nullable="false" />
+          <Property Name="IdTask" Type="Int32" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MemberSubtask" Relationship="Self.FK_MemberSubtask_Subtask" FromRole="Subtask" ToRole="MemberSubtask" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Subtask_Status" FromRole="Subtask" ToRole="Status" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Subtask_Teams" FromRole="Subtask" ToRole="Task" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Specification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfStart" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOfEnd" Type="DateTime" Precision="0" />
+          <Property Name="IdStatus" Type="Int32" Nullable="false" />
+          <Property Name="IdTeam" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Task_Status" FromRole="Task" ToRole="Status" />
+          <NavigationProperty Name="Subtask" Relationship="Self.FK_Subtask_Teams" FromRole="Task" ToRole="Subtask" />
+          <NavigationProperty Name="Teams" Relationship="Self.FK_Task_Team" FromRole="Task" ToRole="Teams" />
+        </EntityType>
+        <EntityType Name="Teams">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Specification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Members" Relationship="Self.FK_Members_Team" FromRole="Teams" ToRole="Members" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Task_Team" FromRole="Teams" ToRole="Task" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Members" Relationship="Self.FK_Members_User" FromRole="User" ToRole="Members" />
+          <NavigationProperty Name="UserHistory" Relationship="Self.FK_UserHistory_User" FromRole="User" ToRole="UserHistory" />
+        </EntityType>
+        <EntityType Name="UserHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="IdAction" Type="Int32" Nullable="false" />
+          <Property Name="DateAction" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Action" Relationship="Self.FK_UserHistory_Action" FromRole="UserHistory" ToRole="Action" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserHistory_User" FromRole="UserHistory" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_UserHistory_Action">
+          <End Role="Action" Type="Self.Action" Multiplicity="1" />
+          <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserHistory">
+              <PropertyRef Name="IdAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Members_Role">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Members_Team">
+          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="IdTeam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Members_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberSubtask_Members">
+          <End Role="Members" Type="Self.Members" Multiplicity="1" />
+          <End Role="MemberSubtask" Type="Self.MemberSubtask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MemberSubtask">
+              <PropertyRef Name="IdMember" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberSubtask_Subtask">
+          <End Role="Subtask" Type="Self.Subtask" Multiplicity="1" />
+          <End Role="MemberSubtask" Type="Self.MemberSubtask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subtask">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MemberSubtask">
+              <PropertyRef Name="IdSubtask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subtask_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Subtask" Type="Self.Subtask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Subtask">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subtask_Teams">
+          <End Role="Task" Type="Self.Task" Multiplicity="1" />
+          <End Role="Subtask" Type="Self.Subtask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Subtask">
+              <PropertyRef Name="IdTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Team">
+          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teams">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="IdTeam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserHistory_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserHistory">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TaskManagerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Action" EntityType="Self.Action" />
+          <EntitySet Name="Members" EntityType="Self.Members" />
+          <EntitySet Name="MemberSubtask" EntityType="Self.MemberSubtask" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="Subtask" EntityType="Self.Subtask" />
+          <EntitySet Name="Task" EntityType="Self.Task" />
+          <EntitySet Name="Teams" EntityType="Self.Teams" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="UserHistory" EntityType="Self.UserHistory" />
+          <AssociationSet Name="FK_UserHistory_Action" Association="Self.FK_UserHistory_Action">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="UserHistory" EntitySet="UserHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Members_Role" Association="Self.FK_Members_Role">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Members_Team" Association="Self.FK_Members_Team">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Members_User" Association="Self.FK_Members_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberSubtask_Members" Association="Self.FK_MemberSubtask_Members">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="MemberSubtask" EntitySet="MemberSubtask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberSubtask_Subtask" Association="Self.FK_MemberSubtask_Subtask">
+            <End Role="Subtask" EntitySet="Subtask" />
+            <End Role="MemberSubtask" EntitySet="MemberSubtask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subtask_Status" Association="Self.FK_Subtask_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Subtask" EntitySet="Subtask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Status" Association="Self.FK_Task_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subtask_Teams" Association="Self.FK_Subtask_Teams">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="Subtask" EntitySet="Subtask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Team" Association="Self.FK_Task_Team">
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserHistory_User" Association="Self.FK_UserHistory_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserHistory" EntitySet="UserHistory" />
+          </AssociationSet>
+          <FunctionImport Name="AddUserHistoryRecord">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="IdAction" Mode="In" Type="Int32" />
+            <Parameter Name="DateAction" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="CheckIdInMembers" ReturnType="Collection(Boolean)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="TeamTitle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CheckIdInMembersForTeam" ReturnType="Collection(Boolean)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="TaskId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllData" ReturnType="Collection(TaskManagerModel.GetAllData_Result)" />
+          <FunctionImport Name="GetUserHistory" ReturnType="Collection(TaskManagerModel.GetUserHistory_Result)">
+            <Parameter Name="IdUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetAllData_Result">
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Surname" Nullable="false" />
+          <Property Type="String" Name="Login" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="true" />
+          <Property Type="String" Name="Specification" Nullable="true" />
+          <Property Type="String" Name="Title1" Nullable="true" />
+          <Property Type="String" Name="Specification1" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfStart" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfEnd" Nullable="true" />
+          <Property Type="String" Name="Статус" Nullable="true" />
+          <Property Type="String" Name="Команда" Nullable="true" />
+          <Property Type="String" Name="Title2" Nullable="true" />
+          <Property Type="String" Name="Specification2" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfStart1" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfEnd1" Nullable="true" />
+          <Property Type="String" Name="Статус1" Nullable="true" />
+          <Property Type="String" Name="Задача" Nullable="true" />
+          <Property Type="String" Name="Comments" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetUserHistory_Result">
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="200" />
+          <Property Type="DateTime" Name="DateAction" Nullable="false" Precision="23" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище TaskManagerModelContainer" CdmEntityContainer="TaskManagerEntities">
+          <EntitySetMapping Name="Action">
+            <EntityTypeMapping TypeName="TaskManagerModel.Action">
+              <MappingFragment StoreEntitySet="Action">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="TaskManagerModel.Members">
+              <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="IdTeam" ColumnName="IdTeam" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberSubtask">
+            <EntityTypeMapping TypeName="TaskManagerModel.MemberSubtask">
+              <MappingFragment StoreEntitySet="MemberSubtask">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdMember" ColumnName="IdMember" />
+                <ScalarProperty Name="IdSubtask" ColumnName="IdSubtask" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="TaskManagerModel.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="TaskManagerModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subtask">
+            <EntityTypeMapping TypeName="TaskManagerModel.Subtask">
+              <MappingFragment StoreEntitySet="Subtask">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="DateOfStart" ColumnName="DateOfStart" />
+                <ScalarProperty Name="DateOfEnd" ColumnName="DateOfEnd" />
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+                <ScalarProperty Name="IdTask" ColumnName="IdTask" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Task">
+            <EntityTypeMapping TypeName="TaskManagerModel.Task">
+              <MappingFragment StoreEntitySet="Task">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="DateOfStart" ColumnName="DateOfStart" />
+                <ScalarProperty Name="DateOfEnd" ColumnName="DateOfEnd" />
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+                <ScalarProperty Name="IdTeam" ColumnName="IdTeam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="TaskManagerModel.Teams">
+              <MappingFragment StoreEntitySet="Teams">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="TaskManagerModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserHistory">
+            <EntityTypeMapping TypeName="TaskManagerModel.UserHistory">
+              <MappingFragment StoreEntitySet="UserHistory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdAction" ColumnName="IdAction" />
+                <ScalarProperty Name="DateAction" ColumnName="DateAction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddUserHistoryRecord" FunctionName="Хранилище TaskManagerModel.AddUserHistoryRecord" />
+          <FunctionImportMapping FunctionImportName="CheckIdInMembers" FunctionName="Хранилище TaskManagerModel.CheckIdInMembers" />
+          <FunctionImportMapping FunctionImportName="CheckIdInMembersForTeam" FunctionName="Хранилище TaskManagerModel.CheckIdInMembersForTeam" />
+          <FunctionImportMapping FunctionImportName="GetAllData" FunctionName="Хранилище TaskManagerModel.GetAllData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TaskManagerModel.GetAllData_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="Title1" ColumnName="Title1" />
+                <ScalarProperty Name="Specification1" ColumnName="Specification1" />
+                <ScalarProperty Name="DateOfStart" ColumnName="DateOfStart" />
+                <ScalarProperty Name="DateOfEnd" ColumnName="DateOfEnd" />
+                <ScalarProperty Name="Статус" ColumnName="Статус" />
+                <ScalarProperty Name="Команда" ColumnName="Команда" />
+                <ScalarProperty Name="Title2" ColumnName="Title2" />
+                <ScalarProperty Name="Specification2" ColumnName="Specification2" />
+                <ScalarProperty Name="DateOfStart1" ColumnName="DateOfStart1" />
+                <ScalarProperty Name="DateOfEnd1" ColumnName="DateOfEnd1" />
+                <ScalarProperty Name="Статус1" ColumnName="Статус1" />
+                <ScalarProperty Name="Задача" ColumnName="Задача" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetUserHistory" FunctionName="Хранилище TaskManagerModel.GetUserHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TaskManagerModel.GetUserHistory_Result">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="DateAction" ColumnName="DateAction" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
